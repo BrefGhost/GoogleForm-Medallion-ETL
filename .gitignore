@@ -1,0 +1,11 @@
+# Credentials
+.env
+
+# Database & Data Local
+postgres_data/
+*.db
+*.sqlite3
+
+# Python Cache
+__pycache__/
+*.py[cod]
