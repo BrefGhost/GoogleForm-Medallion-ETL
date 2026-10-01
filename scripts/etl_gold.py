@@ -9,9 +9,9 @@ USER = os.getenv("POSTGRES_USER")
 PASSWORD = os.getenv("POSTGRES_PASSWORD")
 DB = os.getenv("POSTGRES_DB")
 PORT = os.getenv("POSTGRES_PORT")
-HOST = "localhost"
+HOST = os.getenv("POSTGRES_HOST", "localhost")
 
-db_url = f"postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
+db_url = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
 engine = create_engine(db_url)
 
 def build_gold_layer():
